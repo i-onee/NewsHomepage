@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document';
 
 const Document = () => {
 	return (
@@ -6,10 +6,10 @@ const Document = () => {
 			<Head />
 			<body>
 				<Main />
-				<NextScript/>
+				<NextScript />
 			</body>
 		</Html>
-	)
-}
+	);
+};
 
-export default Document
+export default Document;

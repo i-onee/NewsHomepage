@@ -1,0 +1,73 @@
+.logo { width: 4rem; height: auto; }
+
+.container,
+.menu ul { 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+}
+
+.container {
+	padding: 1.2rem 1rem;
+	max-width: var(--xl);
+	margin: auto;
+}
+
+.menu ul a {
+	text-decoration: none;
+	color: var(--dark-gray);
+	font-size: 1.05em;
+}
+
+.menu ul { gap: 2.5rem; }
+.menu ul a:hover {color: var(--orange)}
+
+.menu_toggler {
+	position: absolute;
+	background: none;
+	cursor: pointer ;
+	outline: none;
+	border: none;
+	right: 1rem;
+	z-index: 1;
+}
+
+
+/* =================================================== */
+
+@media only screen and (max-width: 768px) {
+	.en.nav::before { width: 40%; }
+	.cn.nav::before { width: 0; }
+
+	.em.menu { width: 60%; }
+	.cm.menu { width: 0; }
+
+	.nav::before,
+	.menu { transition: .25s; height: 100%; }
+
+	.nav::before  {
+		content: '';
+		background-color: rgba(2, 0, 30, .5);
+		inset: 0 auto 0 0;
+		position: fixed;
+	}
+	.menu {
+		background-color: var(--primary-light);
+		overflow-x: hidden;
+		position: absolute;
+		padding-top: 10rem;
+		inset: 0 0 0 auto;
+		position: fixed;
+	}
+	.menu ul {
+		flex-direction: column;
+		align-items: flex-start;
+		padding-left: 2rem;
+	}
+	.menu ul a { 
+		color: var(--primary-dark);
+		font-size: 1.1em;
+		font-weight: 450;
+	}
+}
