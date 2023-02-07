@@ -10,7 +10,7 @@ const inter = Inter({ subsets: [ 'latin' ] });
 const classList = (...value: string[]) => [ ...value ].join(' ');
 
 const Home: React.FC = () => {
-	const data = useFetch('http://localhost:3000/api/posts');
+	const data = useFetch('http://localhost:3000/api/posts' || 'https://ione-newshomepage.vercel.app/api/posts');
 	const matches: boolean = useMediaQuery('(max-width: 768px)');
 
 	return (
