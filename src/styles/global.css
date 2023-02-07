@@ -1,33 +1,30 @@
 :root {
+	/* colors */
+	--light	: 254, 253, 249;
+	--gray-1	: 197, 195, 206;
+	--gray-2	: 178, 178, 197;
+	--gray-3 : 116, 112, 126;
+	--dark	: 2, 0, 32;
 
-	/* Colors */
-	--primary-light: #fefdf9;
-	--primary-dark: #02001e;
-	--dark-gray: #45424c;
-	--light-gray: #c5c3ca;
-	--orange: #ed6156;
-	--yellow: #e8ae5e;
+	--yellow	: 227, 168, 76;
+	--orange	: 220, 87, 77;
 
-	/* Size */
+	/* size */
 	--sm: 640px;
 	--md: 768px;
 	--lg: 1024px;
-	--xl: 1280px;
-	--fl: 100%;
-
+	--xl: 1210px;
+	--fl: 100%
 }
 
-*, *::before, *::after {
-	box-sizing: border-box;
-}
+*, *::before, *::after {box-sizing: border-box;}
 
 * {
 	margin: 0;
+	transition: all .1s;
 }
 
-html, body {
-	height: 100%;
-}
+html, body {height: 100%;}
 
 body {
 	background-color: var(--primary-light);
@@ -40,14 +37,8 @@ img, picture, video, canvas, svg {
 	max-width: 100%;
 }
 
-input, button, textarea, select {
-	font: inherit;
-}
+input, button, textarea, select {font: inherit;}
 
-p, h1, h2, h3, h4, h5, h6 {
-	overflow-wrap: break-word;
-}
+p, h1, h2, h3, h4, h5, h6, span {overflow-wrap: break-word;}
 
-#root, #__next {
-	isolation: isolate;
-}
+#root, #__next {isolation: isolate;}

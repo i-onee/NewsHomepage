@@ -1,7 +1,7 @@
 .logo { width: 4rem; height: auto; }
 
 .container,
-.menu ul { 
+.menu ul {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -16,23 +16,23 @@
 
 .menu ul a {
 	text-decoration: none;
-	color: var(--dark-gray);
+	color: rgb(var(--gray-3));
 	font-size: 1.05em;
 }
 
-.menu ul { gap: 2.5rem; }
-.menu ul a:hover {color: var(--orange)}
+.menu ul { gap: 3em; }
+.menu ul a:hover {color: rgb(var(--orange))}
 
-.menu_toggler {
-	position: absolute;
+.menu_t {
 	background: none;
-	cursor: pointer ;
 	outline: none;
+	cursor: pointer;
 	border: none;
-	right: 1rem;
 	z-index: 1;
 }
 
+.menu_t.menu_t_e {position: fixed; right: 1em;}
+.menu_t.menu_t_c {position: absolute; right: 1em;}
 
 /* =================================================== */
 
@@ -53,7 +53,7 @@
 		position: fixed;
 	}
 	.menu {
-		background-color: var(--primary-light);
+		background-color: rgb(var(--light));
 		overflow-x: hidden;
 		position: absolute;
 		padding-top: 10rem;
@@ -64,10 +64,11 @@
 		flex-direction: column;
 		align-items: flex-start;
 		padding-left: 2rem;
+		gap: 1.5em;
 	}
-	.menu ul a { 
-		color: var(--primary-dark);
-		font-size: 1.1em;
+	.menu ul a {
+		color: rgb(var(--dark));
+		font-size: 1.3em;
 		font-weight: 450;
 	}
 }
