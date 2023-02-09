@@ -1,45 +1,41 @@
 import { useFetch, useMediaQuery } from '@hook';
 import style from '@/styles/Main.module.css';
-import { Inter } from '@next/font/google';
-import { Nav } from '@components';
 import { Fragment } from 'react';
+import { Nav } from '@components';
 import Image from 'next/image';
 import Head from 'next/head';
 
-const inter = Inter({ subsets: [ 'latin' ] });
 const classList = (...value: string[]) => [ ...value ].join(' ');
 
 const Home: React.FC = () => {
 	const data = useFetch('https://ione-newshomepage.vercel.app/api/posts');
 	const matches: boolean = useMediaQuery('(max-width: 768px)');
 
+	const dataFilter = (v: boolean) => data?.filter(i => v === i.new);
+
 	return (
-		<main className={inter.className}>
+		<Fragment>
 			<Head>
-				<title>News</title>
+				<title>News_Homepage</title>
 				<link rel={'icon'} href={'/img/favicon-32x32.png'} />
 			</Head>
-
 			<Nav />
-			<section className={style.container}>
+			<main className={style.container}>
 				<section className={classList(style.area, style.area_1)}>
-					<Image priority width={512} height={512} alt={'web-3.jpg'} src={`/img/image-web-3-${matches ? 'mobile' : 'desktop'}.jpg`}/>
+					<Image priority width={1200} height={600} alt={matches ? 'Web 3 mobile' : 'Web 3 desktop'} src={`/img/image-web-3-${matches ? 'mobile' : 'desktop'}.jpg`}/>
 				</section>
 
 				<section className={classList(style.area, style.area_2)}>
-					<h1>New</h1>
+					<h1>new</h1>
 					{
-						data?.filter(item => item.new).map((item, key) => {
-							const itemLength = data?.filter(item => item.new).length;
-							return (
-								<Fragment key={key}>
-									<article>
-										<h2>{item.title}</h2>
-										<p>{item.content}</p>
-									</article>
-									{ key !== itemLength - 1  && <hr/> }
-								</Fragment>
-							);
+						dataFilter(true)?.map((i, k) => {
+							return <Fragment key={k}>
+								<article>
+									<h2>{i.title}</h2>
+									<p>{i.content}</p>
+								</article>
+								{k !== dataFilter(true)!.length - 1 && <hr />}
+							</Fragment>;
 						})
 					}
 				</section>
@@ -50,27 +46,10 @@ const Home: React.FC = () => {
 
 				<section className={classList(style.area, style.area_4)}>
 					<p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
-					<button>READ MORE</button>
+					<button>Read More</button>
 				</section>
-
-				<section className={classList(style.area, style.area_5)}>
-					{
-						data?.filter(item => !item.new).map((item, key) => {
-							return (
-								<article key={key}>
-									<Image priority width={512} height={512} alt={'web-3.jpg'} src={`${item.image}`} />
-									<figure>
-										<span>{`0${key + 1}`}</span>
-										<h3>{item.title}</h3>
-										<p>{item.content}</p>
-									</figure>
-								</article>
-							);
-						})
-					}
-				</section>
-			</section>
-		</main>
+			</main>
+		</Fragment>
 	);
 };
 

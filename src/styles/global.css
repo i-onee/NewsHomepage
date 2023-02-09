@@ -13,7 +13,7 @@
 	--sm: 640px;
 	--md: 768px;
 	--lg: 1024px;
-	--xl: 1210px;
+	--xl: 1220px;
 	--fl: 100%
 }
 
@@ -21,13 +21,12 @@
 
 * {
 	margin: 0;
-	transition: all .1s;
 }
 
 html, body {height: 100%;}
 
 body {
-	background-color: var(--primary-light);
+	background-color: rgb(var(--light));
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 }
@@ -38,6 +37,14 @@ img, picture, video, canvas, svg {
 }
 
 input, button, textarea, select {font: inherit;}
+
+button {
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
 
 p, h1, h2, h3, h4, h5, h6, span {overflow-wrap: break-word;}
 

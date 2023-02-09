@@ -1,4 +1,4 @@
-.logo { width: 4rem; height: auto; }
+.logo { width: 4em; height: auto;}
 
 .container,
 .menu ul {
@@ -6,69 +6,60 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0;
+	gap: 3em;
 }
 
 .container {
-	padding: 1.2rem 1rem;
+	padding: 1.2em 1em;
 	max-width: var(--xl);
-	margin: auto;
+	margin: 0 auto;
 }
 
 .menu ul a {
 	text-decoration: none;
 	color: rgb(var(--gray-3));
-	font-size: 1.05em;
 }
-
-.menu ul { gap: 3em; }
-.menu ul a:hover {color: rgb(var(--orange))}
+.menu ul a:hover { color: rgb(var(--orange)); }
 
 .menu_t {
-	background: none;
-	outline: none;
-	cursor: pointer;
-	border: none;
+	position: unset;
+	right: 1em;
 	z-index: 1;
 }
 
-.menu_t.menu_t_e {position: fixed; right: 1em;}
-.menu_t.menu_t_c {position: absolute; right: 1em;}
+.menu_t.menu_t_e { position: fixed; }
+.menu_t.menu_t_c { position: absolute; }
 
-/* =================================================== */
-
-@media only screen and (max-width: 768px) {
-	.en.nav::before { width: 40%; }
-	.cn.nav::before { width: 0; }
-
-	.em.menu { width: 60%; }
-	.cm.menu { width: 0; }
-
-	.nav::before,
-	.menu { transition: .25s; height: 100%; }
-
-	.nav::before  {
+@media only screen and ( max-width: 768px ) {
+	.nav::before {
 		content: '';
-		background-color: rgba(2, 0, 30, .5);
-		inset: 0 auto 0 0;
+		background-color: rgba(var(--dark), .4);
 		position: fixed;
+		inset: 0 auto 0 0;
+		width: 0;
 	}
+
 	.menu {
+		position: fixed;
 		background-color: rgb(var(--light));
 		overflow-x: hidden;
-		position: absolute;
-		padding-top: 10rem;
+		width: 0;
 		inset: 0 0 0 auto;
-		position: fixed;
 	}
+
 	.menu ul {
 		flex-direction: column;
 		align-items: flex-start;
-		padding-left: 2rem;
-		gap: 1.5em;
+		margin: 8em 0 0 2em;
+		gap: 2em;
 	}
+
 	.menu ul a {
 		color: rgb(var(--dark));
-		font-size: 1.3em;
+		font-size: 1.3rem;
 		font-weight: 450;
 	}
+
+	.en.nav::before { width: 40%; }
+	.em.menu { width: 60%; }
 }
