@@ -18,6 +18,7 @@ const Home: React.FC = () => {
 			<Head>
 				<title>News_Homepage</title>
 				<link rel={'icon'} href={'/img/favicon-32x32.png'} />
+				<meta name='description' content='news newshomepage ione ionenews ionenewshomepage'/>
 			</Head>
 			<Nav />
 			<main className={style.container}>
