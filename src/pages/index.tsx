@@ -48,6 +48,21 @@ const Home: React.FC = () => {
 					<p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
 					<button>Read More</button>
 				</section>
+
+				<section className={classList(style.area, style.area_5)}>
+					{
+						dataFilter(false)?.map((i, k) => {
+							return <article key={k}>
+								<Image alt={'x'} src={`${i.image}`} width={512} height={512} />
+								<aside>
+									<h2>{`0${k + 1}`}</h2>
+									<h3>{i.title}</h3>
+									<p>{i.content}</p>
+								</aside>
+							</article>;
+						})
+					}
+				</section>
 			</main>
 		</Fragment>
 	);
