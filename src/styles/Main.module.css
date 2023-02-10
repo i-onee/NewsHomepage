@@ -45,7 +45,7 @@
 .area_4 button:hover { background-color: rgb(var(--dark)); }
 
 .area_5 article {display: flex;gap: 2em;}
-.area_5 article img {width: auto; height: auto;}
+.area_5 article img {width: 29%; height: auto;}
 .area_5 article aside {
 	display: flex;
 	flex-direction: column;
@@ -98,6 +98,7 @@
 @media only screen and (max-width: 1024px) {
 	.container {
 		grid-template-columns: 2fr auto 2fr;
+		max-width: var(--md);
 	}
 	.area_1 { grid-column: 1 / span 3; }
 	.area_2 {
@@ -117,7 +118,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-	.container { grid-template-columns: 1fr;}
+	.container { grid-template-columns: 1fr; max-width: var(--sm);}
 	.area_1 { grid-column: 1 / span 3; }
 	.area_2 {
 		grid-column: 1 / span 3;
