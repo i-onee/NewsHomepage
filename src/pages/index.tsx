@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 			<Nav />
 			<main className={style.container}>
 				<section className={classList(style.area, style.area_1)}>
-					<Image priority width={1200} height={600} alt={matches ? 'Web 3 mobile' : 'Web 3 desktop'} src={`/img/image-web-3-${matches ? 'mobile' : 'desktop'}.jpg`}/>
+					<Image priority width={1200} height={340} alt={matches ? 'Web 3 mobile' : 'Web 3 desktop'} src={`/img/image-web-3-${matches ? 'mobile' : 'desktop'}.jpg`}/>
 				</section>
 
 				<section className={classList(style.area, style.area_2)}>
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
 					{
 						dataFilter(false)?.map((i, k) => {
 							return <article key={k}>
-								<Image alt={'x'} src={`${i.image}`} width={512} height={512} />
+								<Image alt={'x'} src={`${i.image}`} width={110} height={135} />
 								<aside>
 									<h2>{`0${k + 1}`}</h2>
 									<h3>{i.title}</h3>
